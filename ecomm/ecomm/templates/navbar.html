@@ -1,0 +1,81 @@
+{% load cart_template_tags %}
+
+<!-- Navbar -->
+<nav class="navbar navbar_color fixed-top navbar-expand-lg">
+    <!-- Container wrapper -->
+    <div class="container">    
+        <!-- Toggle button -->
+        <button
+        class="navbar-toggler"
+        type="button"
+        data-mdb-toggle="collapse"
+        data-mdb-target="#navbarSupportedContent1"
+        aria-controls="navbarSupportedContent1"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+        >
+        <i class="fas fa-bars"></i>
+        </button>
+    
+        <!-- Collapsible wrapper -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent1">      
+        <!-- Navbar brand -->
+        <a class="navbar-brand mt-2 mt-sm-0" href="#">
+            <img
+            src="../static/img/k4.png"
+            height="40"
+            alt="MDB Logo"
+            loading="lazy"
+            />
+        </a>
+        <!-- Left links -->
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item active">
+            <a class="nav-link " href="/">Home</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="{% url 'toko:checkout' %}">Checkout</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/">Kontak</a>
+                </li>
+        </ul>
+        <!-- Left links -->      
+        </div>
+        <!-- Collapsible wrapper -->
+        
+        <!-- Right elements -->
+        <div class="d-flex align-items-center">
+                <div class="input-group search-div">
+                    <div class="form-outline searching">
+                      <input type="search" id="form1" class="form-control" />
+                      <label class="form-label" for="form1">Search</label>
+                    </div>
+                    <button type="button" class="btn btn-primary">
+                      <i class="fas fa-search"></i>
+                    </button>
+                  </div>
+                <!--
+                <form class="w-auto py-1" style="max-width: 12rem">
+                    <input type="search" class="form-control rounded-0" placeholder="Search" aria-label="Search">
+                </form> -->
+            {% if request.user.is_authenticated %}
+                <!-- Icon -->
+                <a class="nav-link me-3" href="{% url 'toko:order-summary' %}">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="badge rounded-pill badge-notification bg-danger">{{ request.user|total_produk_dikeranjang }}</span>
+                </a>
+                <a class="nav-link me-3" href="{% url 'account_logout' %}">
+                    <i class="fas fa-right-from-bracket"></i>
+                </a>
+            {% else %}
+                <a class="nav-link me-3" href="{% url 'account_login' %}">
+                <i class="fas fa-right-to-bracket"></i>
+            {% endif %}
+        </div> 
+        <!-- Right elements -->
+        
+    </div>
+    <!-- Container wrapper -->
+</nav>
+    <!-- Navbar -->

@@ -1,0 +1,53 @@
+.navbar_color {
+  background-color : #3EB4D5
+}
+.carousel-item {
+  top : -50px;
+  height: 50%;
+}
+none-ul {
+    list-style-type: none;
+}
+.card {
+box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.footer-cta {
+box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px;
+}
+.price {
+color: #263238;
+font-size: 24px;
+}
+
+.card-title {
+color:#263238
+}
+
+.sale {
+color: #E53935
+}
+
+.sale-badge {
+background-color: #E53935
+}
+
+.column {
+  float: left;
+  width: 20%;
+  padding-right: 30px;
+  padding-left: 30px;
+}
+
+
+p {
+  text-align: center;
+}
+
+.search-div {
+  margin-right: 15px;
+}
+
+.searching {
+  background-color: #fff;
+}
